@@ -13,6 +13,15 @@
     <input type="text" placeholder="What is your name?" ng-model="name">
     <h1>My name is: {{ name }}</h1>
 
+    <select class="animals" name="animals" ng-model="animal">
+      <option value="dogs">Dogs</option>
+      <option value="cats">Cats</option>
+      <option value="dogs and cats">Dogs and Cats</option>
+      <option value="neither">Neither</option>
+    </select>
+    <br>
+    <h3>I love {{ animal }}!</h3>
+
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
 
