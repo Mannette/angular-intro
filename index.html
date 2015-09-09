@@ -74,6 +74,34 @@
       <p>Tip: {{ meal * tip | currency}}</p>
     </div>
 
+    <div>
+      <h1>Angular Madlibs</h1>
+      <p>Boy's Name
+        <br>
+        <input type="text" placeholder="Enther a boy's name .." ng-model="name">
+      </p>
+      <p>Adjective
+        <br>
+        <input type="text" placeholder="Enter an adjective .." ng-model="adjective">
+      </p>
+      <p>plural noun
+        <br>
+        <input type="text" placeholder="Enter a plural noun .." ng-model="firstNoun">
+      </p>
+      <p>An insect (plural)
+        <br>
+        <input type="text" placeholder="Enter a plural insect .." ng-model="insect">
+      </p>
+      <p>Plural noun
+        <br>
+        <input type="text" placeholder="Enter a plural noun .." ng-model="secondNoun">
+      </p>
+      <p>A verb ending in "s"
+        <br>
+        <input type="text" placeholder="Enter a verb ending in 's'" ng-model="verb">
+      </p>
+      <p>I'm in love with {{ name | uppercase}}. He's so {{ adjective | uppercase}}! He has big flat {{ firstNoun | uppercase }}, and when our {{ secondNoun | uppercase }} meet, I get {{ insect | uppercase }} in my stomach. I've fallen for him like a ton of {{ verb | uppercase }}, and he shuffles for me too. But I think he's got another girlfriend. What should I do?</p>
+    </div>
 
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
