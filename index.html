@@ -59,6 +59,21 @@
 
     </div>
 
+    <div>
+      <h1>angular tip calculator</h1>
+      <p>How much was your meal? <input type="text" ng-model="meal"></p>
+      <p>How much for a tip?
+        <select class="tip" name="tip" ng-model="tip">
+          <option value="0.1">10%</option>
+          <option value="0.15">15%</option>
+          <option value="0.2">20%</option>
+          <option value="0.25">25%</option>
+        </select>
+      </p>
+      <p>Subtotal: {{ meal | currency}}</p>
+      <p>Tip: {{ meal * tip | currency}}</p>
+    </div>
+
 
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
