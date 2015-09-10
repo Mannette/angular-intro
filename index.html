@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>{{ greeting }} World</title>
+    <link rel="stylesheet" href="angular.css">
   </head>
 
   <body>
@@ -11,11 +12,13 @@
     <p>{{ 1 + 6 }}</p>
     <p>Say something to the world <input type="text" ng-model="greeting" ng-init="greeting='Hello, '"></p>
     <p>{{ greeting }} world!</p>
+    <!-- ** END EXERCISE 1.1 ** -->
 
     <!-- ** EXERCISE 1.2 ** -->
     <h1><u>1.2</u></h1>
     <input type="text" placeholder="What is your name?" ng-model="name">
     <h2>My name is: {{ name }}</h2>
+    <!-- ** END EXERCISE 1.2 ** -->
 
     <!-- ** EXERCISE 1.3 ** -->
     <h1><u>1.3</u></h1>
@@ -27,6 +30,7 @@
     </select>
     <br>
     <h3>I love {{ animal }}!</h3>
+    <!-- ** END EXERCISE 1.3 ** -->
 
     <!-- ** EXERCISE 1.4 ** -->
     <h1><u>1.4</u></h1>
@@ -127,6 +131,7 @@
         and he shuffles for me too. But I think he's got another girlfriend. What should I do?
       </p>
     </div>
+    <!-- ** END EXERCISE 1.4 ** -->
 
     <!-- ** EXERCISE 1.5 ** -->
     <h1><u>1.5</u></h1>
@@ -180,14 +185,40 @@
     </div><br>
 
     <h2>Sign up</h2>
-    <input type="password" name="password" ng-model="pswrd">
+    <input type="password" name="password" ng-model="pswrd" ng-class="{invalid: pswrd.length < 6, valid: pswrd.length > 5}">
     <button ng-show="pswrd.length > 5">Sign up!</button>
-    <span ng-show="pswrd.length <= 5">This password is invalid!</span>
+    <span class="invalid"  ng-show="pswrd.length <= 5">This password is invalid!</span>
+    <br>
+    <span ng-show="pswrd.length > 0" ng-class="{invalid: pswrd.length < 6, valid: pswrd.length > 5}">Your password is {{ pswrd.length }}
+      <ng-pluralize count="pswrd.length"
+        when="{'1': 'character',
+          'other': 'characters'}">
+    </span>
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
-
-    <script type="text/javascript" src="angular.js"></script>
+    <div ng-controller="camera">
+      <h2>Camera Shop</h2>
+      <span>Sort By:</span>
+      <select ng-model="selected">
+        <option value="rating">rating</option>
+        <option value="price">price</option>
+      </select>
+      <div ng-repeat="camera in cameras | orderBy: selected">
+        <h3>{{ camera.title }}</h3>
+        <p ng-class="{highlight: camera.onSale === true}">
+          {{ camera.price | currency }}
+          <span ng-show="camera.onSale === true"> ON SALE!</span>
+        </p>
+        <p>{{ camera.rating }}</p>
+        <img ng-src="{{ camera.image }}">
+      </div>
+    </div>
+    <!-- ** END EXERCISE 1.5 ** -->
 
   </body>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+
+  <script type="text/javascript" src="angular.js"></script>
+
 
 </html>
