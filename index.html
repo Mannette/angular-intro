@@ -52,10 +52,17 @@
         <option value="6">6</option>
         <option value="7">7</option>
       </select>
-      <p>Here are the first {{ digits }}
+      <p>
+        Here
+        <ng-pluralize count="digits"
+          when="{'1': 'is',
+            'other': 'are'}"></ng-pluralize>
+             the first {{ digits }}
         <ng-pluralize count="digits"
           when="{'1': 'digit',
-            'other': 'digits'}"></ng-pluralize> of PI {{ 3.14159265359 | number:digits }}</p>
+            'other': 'digits'}"></ng-pluralize>
+             of PI {{ 3.14159265359 | number:digits }}
+      </p>
 
     </div>
 
@@ -118,6 +125,23 @@
           {{ symbol }}
         </li>
       </ul>
+    </div>
+
+    <div ng-controller="numbers">
+      <ul>
+        <li ng-repeat="num in nums track by $index">
+          {{ num }}
+        </li>
+      </ul>
+    </div>
+
+    <div ng-controller="person">
+      <ol>
+        <li ng-repeat="student in students">
+          {{ student.name }}
+          {{ student.age }}
+        </li>
+      </ol>
     </div>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
