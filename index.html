@@ -6,15 +6,18 @@
   </head>
 
   <body>
+    <!-- ** EXERCISE 1.1 ** -->
     <h1><u>1.1</u></h1>
     <p>{{ 1 + 6 }}</p>
     <p>Say something to the world <input type="text" ng-model="greeting" ng-init="greeting='Hello, '"></p>
     <p>{{ greeting }} world!</p>
 
+    <!-- ** EXERCISE 1.2 ** -->
     <h1><u>1.2</u></h1>
     <input type="text" placeholder="What is your name?" ng-model="name">
     <h2>My name is: {{ name }}</h2>
 
+    <!-- ** EXERCISE 1.3 ** -->
     <h1><u>1.3</u></h1>
     <select class="animals" name="animals" ng-model="animal">
       <option value="dogs">Dogs</option>
@@ -25,6 +28,7 @@
     <br>
     <h3>I love {{ animal }}!</h3>
 
+    <!-- ** EXERCISE 1.4 ** -->
     <h1><u>1.4</u></h1>
     <p>1 + 2 = {{ 1 + 2 }}</p>
     <p>My name is {{ "BoJack" + " " + "Horseman" }}</p>
@@ -107,9 +111,24 @@
         <br>
         <input type="text" placeholder="Enter a verb ending in 's'" ng-model="verb">
       </p>
-      <p>I'm in love with {{ name | uppercase}}. He's so {{ adjective | uppercase}}! He has big flat {{ firstNoun | uppercase }}, and when our {{ secondNoun | uppercase }} meet, I get {{ insect | uppercase }} in my stomach. I've fallen for him like a ton of {{ verb | uppercase }}, and he shuffles for me too. But I think he's got another girlfriend. What should I do?</p>
+      <p>
+        I'm in love with
+        {{ name | uppercase}}.
+        He's so
+        {{ adjective | uppercase}}!
+        He has big flat
+        {{ firstNoun | uppercase }},
+        and when our
+        {{ secondNoun | uppercase }}
+        meet, I get
+        {{ insect | uppercase }}
+        in my stomach. I've fallen for him like a ton of
+        {{ verb | uppercase }},
+        and he shuffles for me too. But I think he's got another girlfriend. What should I do?
+      </p>
     </div>
 
+    <!-- ** EXERCISE 1.5 ** -->
     <h1><u>1.5</u></h1>
     <div ng-controller="hogwarts">
       <ul>
@@ -143,6 +162,27 @@
         </li>
       </ol>
     </div>
+
+    <div ng-show="3 + 4 == 5">
+      3 + 4 isn't 5, don't show
+    </div>
+
+    <div ng-show="3 + 4 == 7">
+      3 + 4 is 7, do show
+    </div>
+
+    <div ng-hide="3 + 4 == 5">
+      3 + 4 isn't 5, don't hide
+    </div>
+
+    <div ng-hide="3 + 4 == 7">
+      3 + 4 is 7, do hide
+    </div><br>
+
+    <h2>Sign up</h2>
+    <input type="password" name="password" ng-model="pswrd">
+    <button ng-show="pswrd.length > 5">Sign up!</button>
+    <span ng-show="pswrd.length <= 5">This password is invalid!</span>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
 
