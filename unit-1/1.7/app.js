@@ -19,16 +19,54 @@ app.controller('wordReverse', function($scope) {
 });
 
 app.controller('pingPong', function($scope) {
+
+  var total = 0;
+
+
   $scope.player1 = 0;
   $scope.player2 = 0;
   $scope.playerOne = function() {
-    $scope.player1 += 1;
+    total += 1;
+    if ($scope.player1 < 11) {
+      $scope.player1 += 1;
+    } else {
+      $scope.player1 += 0;
+    }
+    console.log(total);
+    return total;
   };
   $scope.playerTwo = function() {
-    $scope.player2 += 1;
+    total += 1;
+    if ($scope.player2 < 11) {
+      $scope.player2 += 1;
+    } else {
+      $scope.player2 += 0;
+    }
+    console.log(total);
+    return total;
   };
   $scope.reset = function() {
     $scope.player1 = 0;
     $scope.player2 = 0;
+    total = 0;
   };
+  $scope.playerOneServing = function() {
+    var playerOneServe = [0, 1, 4, 5, 8, 9, 12, 13, 16, 17, 20, 21];
+
+    for (var i = 0; i < playerOneServe.length; i++) {
+      if (playerOneServe.indexOf(total) === 0) {
+        return true;
+      }
+    }
+  };
+  $scope.playerTwoServing = function() {
+    var playerTwoServe = [2, 3, 6, 7, 10, 11, 14, 15, 18, 19];
+
+    for (var i = 0; i < playerTwoServe.length; i++) {
+      if (playerTwoServe.indexOf(total) === 0) {
+        return true;
+      }
+    }
+  };
+  $scope.server = 'Serving';
 });

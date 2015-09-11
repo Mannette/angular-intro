@@ -34,12 +34,12 @@
       <div class="player"  ng-click="playerOne()" ng-class="{win: player1 === 11, lose: player2 === 11}">
         <span>Player 1</span>
         <p class="points">{{ player1 }}</p>
-        <span class="serving">{{ server }}test</span>
+        <span ng-if="playerOneServing()" class="serving">{{ server }}</span>
       </div>
       <div class="player" ng-click="playerTwo()" ng-class="{win: player2 === 11, lose: player1 === 11}">
         <span>Player 2</span>
         <p class="points">{{ player2 }}</p>
-        <span class="serving">{{ server }}test</span>
+        <span ng-if="playerTwoServing()" class="serving">{{ server }}</span>
       </div>
       <br>
       <button class="reset" type="submit" ng-click="reset()">Reset!</button>
