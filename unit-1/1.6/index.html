@@ -6,5 +6,67 @@
   </head>
   <body>
 
+    <div ng-controller="MyFirstController">
+      <h1>My name is: {{ name }}</h1>
+      <input ng-model="name" type="text" placeholder="What is your name?">
+    </div>
+
+    <div>
+      <span ng-controller="ExercisesController">
+        <p>{{ favColor }}</p>
+        <p>{{ secondsInACentury | number : fractionSize }}</p>
+        <p>{{ rightNow }}</p>
+      </span>
+    </div>
+
+    <div ng-controller="madLibs">
+      <h2>Angular Madlibs</h2>
+      <p>Boy's Name
+        <br>
+        <input type="text" placeholder="Enther a boy's name .." id="boyName">
+      </p>
+      <p>Adjective
+        <br>
+        <input type="text" placeholder="Enter an adjective .." id="adjective">
+      </p>
+      <p>Plural noun
+        <br>
+        <input type="text" placeholder="Enter a plural noun .." id="firstNoun">
+      </p>
+      <p>Plural noun
+        <br>
+        <input type="text" placeholder="Enter a plural noun .." id="secondNoun">
+      </p>
+      <p>An insect (plural)
+        <br>
+        <input type="text" placeholder="Enter a plural insect .." id="insect">
+      </p>
+      <p>A verb ending in "s"
+        <br>
+        <input type="text" placeholder="Enter a verb ending in 's'" id="verb">
+      </p>
+      <button type="submit" ng-click="libs()">Lets do this!</button>
+      <p>
+        I'm in love with
+        {{ name | uppercase}}.
+        He's so
+        {{ adjective | uppercase}}!
+        He has big flat
+        {{ firstNoun | uppercase }},
+        and when our
+        {{ secondNoun | uppercase }}
+        meet, I get
+        {{ insect | uppercase }}
+        in my stomach. I've fallen for him like a ton of
+        {{ verb | uppercase }},
+        and he shuffles for me too. But I think he's got another girlfriend. What should I do?
+      </p>
+    </div>
+
   </body>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+
+  <script type="text/javascript" src="app.js"></script>
+
 </html>
