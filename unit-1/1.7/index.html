@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>1.7</title>
+
+    <link rel="stylesheet" href="app.css">
+
   </head>
   <body>
 
@@ -22,6 +25,24 @@
       <p>Your word is: {{ word }}</p>
       <p>Reverse! {{ reversed }}</p>
       <button ng-click="reverse()">Reverse that word!</button>
+    </div>
+
+    <br><br>
+
+    <h3>Ping Pong Score Keeper</h3>
+    <div ng-controller="pingPong">
+      <div class="player"  ng-click="playerOne()" ng-class="{win: player1 === 11, lose: player2 === 11}">
+        <span>Player 1</span>
+        <p class="points">{{ player1 }}</p>
+        <span class="serving">{{ server }}test</span>
+      </div>
+      <div class="player" ng-click="playerTwo()" ng-class="{win: player2 === 11, lose: player1 === 11}">
+        <span>Player 2</span>
+        <p class="points">{{ player2 }}</p>
+        <span class="serving">{{ server }}test</span>
+      </div>
+      <br>
+      <button class="reset" type="submit" ng-click="reset()">Reset!</button>
     </div>
   </body>
 

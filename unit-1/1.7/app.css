@@ -1,0 +1,35 @@
+.player {
+  background-color: blue;
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+  color: white;
+}
+
+.points {
+  position: relative;
+  font-size: 200%;
+  left: 40px;
+  bottom: 20px;
+}
+
+.reset {
+  position: absolute;
+  height: 25px;
+  top: 495px;
+  left: 90px;
+}
+
+.serving {
+  position: relative;
+  bottom: 50px;
+  left: 40px;
+}
+
+.win {
+  background-color: green;
+}
+
+.lose {
+  background-color: red;
+}
