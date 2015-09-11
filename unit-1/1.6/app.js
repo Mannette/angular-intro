@@ -20,5 +20,5 @@ app.controller('madLibs', function($scope) {
     $scope.secondNoun = document.getElementById('secondNoun').value;
     $scope.insect = document.getElementById('insect').value;
     $scope.verb = document.getElementById('verb').value;
-  }
+  };
 });

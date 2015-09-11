@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>1.7</title>
+  </head>
+  <body>
+
+    <div ng-controller="randomNum">
+
+      <h3>The number is {{number}}</h3>
+      <button ng-click="pickRandomNumber()">Pick Random Number</button>
+
+    </div>
+
+    <br><br>
+
+    <div ng-controller="wordReverse">
+
+      <h3>Word Reverser</h3>
+      <input type="text" id="input" placeholder="Enter a word to reverse!" ng-model="word">
+      <p>Your word is: {{ word }}</p>
+      <p>Reverse! {{ reversed }}</p>
+      <button ng-click="reverse()">Reverse that word!</button>
+    </div>
+  </body>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+
+  <script type="text/javascript" src="app.js"></script>
+
+</html>
