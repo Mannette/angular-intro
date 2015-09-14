@@ -33,13 +33,13 @@
     <div ng-controller="pingPong">
       <div class="player"  ng-click="playerOne()" ng-class="{win: player1 === 11, lose: player2 === 11}">
         <span>Player 1</span>
-        <p class="points">{{ player1 }}</p>
-        <span ng-if="playerOneServing()" class="serving">{{ server }}</span>
+        <div class="points">{{ player1 }}</div>
+        <div ng-if="playerOneServing()" class="serving">{{ server }}</div>
       </div>
       <div class="player" ng-click="playerTwo()" ng-class="{win: player2 === 11, lose: player1 === 11}">
         <span>Player 2</span>
-        <p class="points">{{ player2 }}</p>
-        <span ng-if="playerTwoServing()" class="serving">{{ server }}</span>
+        <div class="points">{{ player2 }}</div>
+        <div ng-if="playerTwoServing()" class="serving">{{ server }}</div>
       </div>
       <br>
       <button class="reset" type="submit" ng-click="reset()">Reset!</button>
