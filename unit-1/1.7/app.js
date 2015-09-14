@@ -70,3 +70,24 @@ app.controller('pingPong', function($scope) {
   };
   $scope.server = 'Serving';
 });
+
+
+var contactBtn = document.getElementById('contact');
+
+app.controller('people', ['$scope', function($scope) {
+  $scope.contacts = [];
+
+  contactBtn.addEventListener('click', function() {
+    var newContact = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      phone: document.getElementById('phoneNumber').value
+    };
+    document.getElementById('name').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('phoneNumber').value = '';
+    $scope.contacts.push(newContact);
+  });
+
+
+}]);

@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>1.7</title>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="app.css">
 
   </head>
@@ -44,6 +46,40 @@
       <br>
       <button class="reset" type="submit" ng-click="reset()">Reset!</button>
     </div>
+
+    <br><br>
+
+    <h3>Contacts App</h3>
+    <form>
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" id="name" placeholder="ex: John Bandy">
+      </div>
+      <div class="form-group">
+        <label>Email address</label>
+        <input type="email" class="form-control" id="email" placeholder="ex: something@email.com">
+      </div>
+      <div class="form-group">
+        <label>Phone number</label>
+        <input type="text" class="form-control" id="phoneNumber" placeholder="ex: 111-222-3456">
+      </div>
+      <button type="submit" class="btn btn-success" id="contact">Add new contact</button>
+    </form>
+    <br>
+    <h4>Contacts</h4>
+    <table class="table table-condensed table-striped" id="addedContacts" ng-controller="people">
+      <tr>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Phone</td>
+      </tr>
+      <tr ng-repeat="contact in contacts">
+        <td>{{ contact.name }}</td>
+        <td>{{ contact.email }}</td>
+        <td>{{ contact.phone }}</td>
+      </tr>
+
+    </table>
   </body>
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
