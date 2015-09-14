@@ -64,6 +64,8 @@
         <input type="text" class="form-control" id="phoneNumber" placeholder="ex: 111-222-3456">
       </div>
       <button type="submit" class="btn btn-success" id="contact">Add new contact</button>
+      <span>Search:</span>
+      <input type="search" placeholder="Enter a name" ng-model="name">
     </form>
     <br>
     <h4>Contacts</h4>
@@ -73,7 +75,7 @@
         <td>Email</td>
         <td>Phone</td>
       </tr>
-      <tr ng-repeat="contact in contacts">
+      <tr ng-repeat="contact in contacts | filter : name">
         <td>{{ contact.name }}</td>
         <td>{{ contact.email }}</td>
         <td>{{ contact.phone }}</td>
