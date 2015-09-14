@@ -54,7 +54,7 @@ app.controller('pingPong', function($scope) {
     var playerOneServe = [0, 1, 4, 5, 8, 9, 12, 13, 16, 17, 20, 21];
 
     for (var i = 0; i < playerOneServe.length; i++) {
-      if (playerOneServe.indexOf(total) === 0) {
+      if (playerOneServe[i] === total) {
         return true;
       }
     }
@@ -63,7 +63,7 @@ app.controller('pingPong', function($scope) {
     var playerTwoServe = [2, 3, 6, 7, 10, 11, 14, 15, 18, 19];
 
     for (var i = 0; i < playerTwoServe.length; i++) {
-      if (playerTwoServe.indexOf(total) === 0) {
+      if (playerTwoServe[i] === total) {
         return true;
       }
     }
